@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ex31
 {
@@ -15,7 +11,11 @@ namespace ex31
 
             GenerateValues(array, 0, 101);
 
+            ShowArray(array);
+
             Shuffle(array);
+
+            ShowArray(array);
         }
 
         static void GenerateValues(int[] array, int minValue, int maxValue)
@@ -26,8 +26,6 @@ namespace ex31
             {
                 array[i] = random.Next(minValue, maxValue);
             }
-
-            WriteArray(array);
         }
 
         static void Shuffle(int[] array)
@@ -43,11 +41,9 @@ namespace ex31
                 array[randomIndex] = array[i];
                 array[i] = shuffledElement;
             }
-
-            WriteArray(array);
         }
 
-        static void WriteArray(int[] array)
+        static void ShowArray(int[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
